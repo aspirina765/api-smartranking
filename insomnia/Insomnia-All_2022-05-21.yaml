@@ -1,0 +1,1424 @@
+_type: export
+__export_format: 4
+__export_date: 2022-05-21T23:45:08.624Z
+__export_source: insomnia.desktop.app:v2022.3.0
+resources:
+  - _id: req_f8e6c8fcb5054ff9beb34a665b31b64b
+    parentId: fld_111a53c6a4f949f4a2208cf517f82960
+    modified: 1651853203870
+    created: 1642714364380
+    url: "{{ _.api }}/ec/register"
+    name: Register
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"ec": {
+        		"companyRegistrationName": "Petshop Petmeal 2 S.A",
+        		"document": "78.242.723/0001-94",
+        		"offeringType": "P"
+        	},
+        	"user": {
+        		"email": "{{ _.admin_email }}",
+        		"password": "123456789",
+        		"profile": {
+        			"fullName": "Dudu Neto Ziggie",
+        			"contact": {
+        				"phoneNumber": "854648465654"
+        			}
+        		}
+        	},
+        	"ecResponsable": {
+        		"documentCpf": "585.272.400-92"
+        	}
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_39a63eae45d349959e36e2572a6a047f
+    authentication: {}
+    metaSortKey: -1642714364380
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_111a53c6a4f949f4a2208cf517f82960
+    parentId: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    modified: 1642714356516
+    created: 1642714356516
+    name: EC
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1642714356516
+    _type: request_group
+  - _id: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    parentId: null
+    modified: 1642714159481
+    created: 1642714159481
+    name: Ziggie
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_7c6367ba5e8341d1b248382ddd555e15
+    parentId: fld_111a53c6a4f949f4a2208cf517f82960
+    modified: 1651857211022
+    created: 1643043128204
+    url: "{{ _.api }}/auth/ec/37c6e91a-1a80-42f2-9648-0beed509d6b4/login"
+    name: Login
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+      disabled: false
+    metaSortKey: -1642714364430
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3aac2a30402d47f5bc98bc66f4b76116
+    parentId: fld_111a53c6a4f949f4a2208cf517f82960
+    modified: 1651591124923
+    created: 1643741685693
+    url: "{{ _.api }}/ec"
+    name: Create New
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"ec": {
+        		"companyRegistrationName": "Petshop Petmeal 3 S.A",
+        		"document": "09.845.380/0001-30",
+        		"offeringType": "P",
+        		"parentEc": "f7ffb4c3-0617-4213-85a8-72a584b38058"
+        	},
+        	"ecResponsable": {
+        		"documentCpf": "047.140.313-09"
+        	}
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_39a63eae45d349959e36e2572a6a047f
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1642714266866.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_1413e8d4e0464425928a91a327d4fbb5
+    parentId: fld_111a53c6a4f949f4a2208cf517f82960
+    modified: 1652193348042
+    created: 1647548344188
+    url: "{{ _.api }}/ec"
+    name: Update
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"ec": {
+        		"companyName": "aaa",
+        		"ie": "1212",
+        		"im": "12"
+        	},
+        	"ecResponsables": [{
+        		"ecResponsableId": "b34630a6-6c9b-4ed2-b5a0-0dc06dbe0ff5",
+        		"fullname": "sdfsd",
+        		"email": "a@a.com.br",
+        		"phone": "(31) 12112-1212"
+        	}],
+        	"ecAddress": {
+        		"country": "34009-565",
+        		"province": "Alameda das Felicidades",
+        		"district": "112",
+        		"street": "333",
+        		"addressNumber": "Nova Lima",
+        		"zipCode": "MG",
+        		"addressComplement": "Nova Lima"
+        	}
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_39a63eae45d349959e36e2572a6a047f
+    authentication:
+      type: bearer
+      token: "{{ _.user_worker_ec_token }}"
+    metaSortKey: -1642714315623.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_36ae4b33224d4f3ab80242ccb806edce
+    parentId: fld_111a53c6a4f949f4a2208cf517f82960
+    modified: 1651753256483
+    created: 1651511106097
+    url: "{{ _.api }}/ec/84e19112-8011-413a-9cc2-136d1430b9d4"
+    name: Get Single
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1644147878482
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_377911a386cd4b27815147b8c2faa3da
+    parentId: fld_111a53c6a4f949f4a2208cf517f82960
+    modified: 1651511579339
+    created: 1651511189481
+    url: "{{ _.api }}/ec"
+    name: List All
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1643431121456
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_dfd191906353454caf81d14670649462
+    parentId: fld_60b9392c4e2943f18f02f2a6a85445d6
+    modified: 1651590971585
+    created: 1644360011597
+    url: "{{ _.api }}/auth/password-recovery"
+    name: Password Recovery
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "gulizraizer@gmail.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_3037df91cfdc4eaa87027c633f8ab16d
+    authentication: {}
+    metaSortKey: -1644360011597
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_60b9392c4e2943f18f02f2a6a85445d6
+    parentId: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    modified: 1644360000602
+    created: 1644360000602
+    name: Auth
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1644360000602
+    _type: request_group
+  - _id: req_571534efc27a415f866f1e6b3e244bb5
+    parentId: fld_60b9392c4e2943f18f02f2a6a85445d6
+    modified: 1644693101166
+    created: 1644364426984
+    url: "{{ _.api }}/auth/password-recovery/validate-token"
+    name: Validate Token
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_8edf8fd22aa747c1bc1c1a087db1a1d6
+        name: token
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM4ZjkwZGZkLWUyZDUtNGE4Yi05NjdmLTVkY2ZjM2MzMzNjMSIsImVtYWlsIjoidXNlckB6aWdnaWUuY29tLmJyIiwiaWF0IjoxNjQ0NjkzMDkxLCJleHAiOjE2NDQ2OTMzOTF9.mYB6tGVvxhpXNmgC_d5RgFa96ReilYu_i9NNtIuavg4
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1644304893602.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_175c459a36f24edea0ef66da3db4e4c4
+    parentId: fld_60b9392c4e2943f18f02f2a6a85445d6
+    modified: 1651591013114
+    created: 1644691869388
+    url: "{{ _.api }}/auth/change-password"
+    name: Change Password
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"oldPassword": "12345678",
+        	"newPassword": "123456789"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_3037df91cfdc4eaa87027c633f8ab16d
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM4ZjkwZGZkLWUyZDUtNGE4Yi05NjdmLTVkY2ZjM2MzMzNjMSIsImVtYWlsIjoidXNlckB6aWdnaWUuY29tLmJyIiwiaWF0IjoxNjQ0NjkzMTAyLCJleHAiOjE2NDQ2OTMyMjJ9.HJvu_yIP0nb_KPS2ig2MkpolB9gYYJax9L1w8xyfXxg
+    metaSortKey: -1644249775607.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9f858cfade674436b54f893e07f48fcf
+    parentId: fld_60b9392c4e2943f18f02f2a6a85445d6
+    modified: 1651591011023
+    created: 1647370167580
+    url: "{{ _.api }}/auth/validate-token-once"
+    name: Validate Token Once
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+        	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyV29ya2VyaWQiOiJjZTUwY2NkOS02NTA0LTQ0ZTctYWRhMC05MzhmZTM3M2Q1NjYiLCJzdGF0dXMiOiJQRU5ESU5HIiwiZW1haWwiOiJ1c2VyMDJAZW1haWwuY29tIiwiaWF0IjoxNjQ3Mzc0MjI1fQ.VG98IbfxqpdcWxB0SzQILIpewr3unH7YjvJ2SX1wPDE"
+        }
+    parameters:
+      - id: pair_8edf8fd22aa747c1bc1c1a087db1a1d6
+        name: token
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM4ZjkwZGZkLWUyZDUtNGE4Yi05NjdmLTVkY2ZjM2MzMzNjMSIsImVtYWlsIjoidXNlckB6aWdnaWUuY29tLmJyIiwiaWF0IjoxNjQ0NjkzMDkxLCJleHAiOjE2NDQ2OTMzOTF9.mYB6tGVvxhpXNmgC_d5RgFa96ReilYu_i9NNtIuavg4
+        description: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_030b7fea75fa4b26bbe4e44e65df0d50
+    authentication: {}
+    metaSortKey: -1644277334605.0625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_1db8f08d48f04876aa185295eb05c7e7
+    parentId: fld_60b9392c4e2943f18f02f2a6a85445d6
+    modified: 1651590989584
+    created: 1651518667326
+    url: "{{ _.api }}/auth/user-client/check-email"
+    name: User Client Check Email
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "dudumatosneto@gmail.com"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_3037df91cfdc4eaa87027c633f8ab16d
+    authentication: {}
+    metaSortKey: -1644332452599.6875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_1f0071ae81f145c8b5a0cd3b8ef9866c
+    parentId: fld_60b9392c4e2943f18f02f2a6a85445d6
+    modified: 1651590994685
+    created: 1651519017580
+    url: "{{ _.api }}/auth/user-client/validate-email-code"
+    name: Validate Email Validation Code
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"code": "987931"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_3037df91cfdc4eaa87027c633f8ab16d
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2YWxpZGF0aW9uQ29kZUlkIjoiYTM1NDc2MjUtM2U5MC00Zjk4LWI5MDItODkyNDBkMmQ5MjEzIiwiZW1haWwiOiJkdWR1bWF0b3NuZXRvQGdtYWlsLmNvbSIsImlhdCI6MTY1MTUyMzMyOSwiZXhwIjoxNjUxNTIzNjI5fQ.B2iSLd6Mpi_tJ2fwp6-JJY3VkbP11u72RvndMB0FNLs
+    metaSortKey: -1644318673101.0312
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_f9e0c3b2c9be4105bc49fae2d65d75dd
+    parentId: fld_ba8b8eefbd0b4335815e6848a2d44d34
+    modified: 1644972587847
+    created: 1644972573282
+    url: "{{ _.api }}/auth/force-email"
+    name: Force Email
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1644972573282
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_ba8b8eefbd0b4335815e6848a2d44d34
+    parentId: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    modified: 1644972568408
+    created: 1644972568408
+    name: Email
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1644972568408
+    _type: request_group
+  - _id: req_51d3955861034651b69b5538ca7fd4ae
+    parentId: fld_95c30a44ca6a4fb994bf91b40e3f447b
+    modified: 1646954827516
+    created: 1646954306713
+    url: "{{ _.api }}/menu"
+    name: List All
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1646954306713
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_95c30a44ca6a4fb994bf91b40e3f447b
+    parentId: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    modified: 1646954302414
+    created: 1646954302414
+    name: Menu
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1646954302414
+    _type: request_group
+  - _id: req_906a208364e748aeb1b4d715a53e5d96
+    parentId: fld_736b6922fe9340efa0506aa49743a9db
+    modified: 1651853245205
+    created: 1647374925819
+    url: "{{ _.api }}/user-worker/password"
+    name: Update Password
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"password": "123456789"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e02472616fe849258e5d0e3296701473
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: -1645110331529.875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_736b6922fe9340efa0506aa49743a9db
+    parentId: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    modified: 1647374944363
+    created: 1647374944363
+    name: UserWorker
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1647374944363
+    _type: request_group
+  - _id: req_a61fa9036615410e974d484103213f6c
+    parentId: fld_736b6922fe9340efa0506aa49743a9db
+    modified: 1651590907753
+    created: 1647376798692
+    url: "{{ _.api }}/user-worker/validate-invitation"
+    name: Validate New UserWorker Invitation By Ec
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+        	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyV29ya2VySWQiOiI4YjQxNTFiOS1kZTA3LTQ1ZGYtOWQxZC02Mzc5ZTFhYWNmNmMiLCJzdGF0dXMiOiJQRU5ESU5HIiwiZW1haWwiOiJ1c2VyMDNAZW1haWwuY29tIiwiaWF0IjoxNjQ3Mzc2OTg2fQ.fQ-TgvqhKugXFn76Mc7jF5VCuZkyCMRJpKELpzYkQLc"
+        }
+    parameters:
+      - id: pair_8edf8fd22aa747c1bc1c1a087db1a1d6
+        name: token
+        value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM4ZjkwZGZkLWUyZDUtNGE4Yi05NjdmLTVkY2ZjM2MzMzNjMSIsImVtYWlsIjoidXNlckB6aWdnaWUuY29tLmJyIiwiaWF0IjoxNjQ0NjkzMDkxLCJleHAiOjE2NDQ2OTMzOTF9.mYB6tGVvxhpXNmgC_d5RgFa96ReilYu_i9NNtIuavg4
+        description: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_030b7fea75fa4b26bbe4e44e65df0d50
+    authentication: {}
+    metaSortKey: -1645110331579.875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_4c15e4889def4bffba0e5ca1cd4958bb
+    parentId: fld_736b6922fe9340efa0506aa49743a9db
+    modified: 1651853250600
+    created: 1649700636358
+    url: "{{ _.api }}/auth/user-worker/signin"
+    name: Signin
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "{{ _.admin_email }}",
+        	"password": "{{ _.admin_password }}"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e7fe0093d7ad4e3f9ce3b524f94241a1
+    authentication: {}
+    metaSortKey: -1645110331554.875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5689744a03be4f079e50bb6c9eb7d7b5
+    parentId: fld_736b6922fe9340efa0506aa49743a9db
+    modified: 1651076271820
+    created: 1651074391333
+    url: "{{ _.api }}/user-worker"
+    name: List All
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_e0986d2713c94c7cafd762ab2e13ed57
+        name: id
+        value: 7a484779-8ed1-461a-8110-39511638ac46
+        description: ""
+        disabled: true
+      - id: pair_a68c969e09ff4fb1826270434fe6fdaf
+        name: active
+        value: "false"
+        description: ""
+        disabled: true
+      - id: pair_2d7acf78f00846abacdfa1cea6ede36d
+        name: fullName
+        value: Guli
+        description: ""
+        disabled: true
+      - id: pair_8f6e98b395d6417a84a3a2344bcd36a3
+        name: document
+        value: "04714031309"
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1645110331542.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_89346065fa0b417cab3938caac398ff3
+    parentId: fld_9e2485d5f10c4eea94f0727e68328adf
+    modified: 1649337007662
+    created: 1642714169353
+    url: "{{ _.api }}"
+    name: API
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1642714169353
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_9e2485d5f10c4eea94f0727e68328adf
+    parentId: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    modified: 1651514044238
+    created: 1649336996053
+    name: API
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1651245398233
+    _type: request_group
+  - _id: req_afde858e49534e8f8d1aab6f14239749
+    parentId: fld_9e2485d5f10c4eea94f0727e68328adf
+    modified: 1649337017247
+    created: 1649337013778
+    url: "{{ _.api }}/node_env"
+    name: Node Env
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1642714169303
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_7fc4274ac56045baa4634ae318ef44ad
+    parentId: fld_952c4ddc84324eceaa45f29b6b28e331
+    modified: 1653068880181
+    created: 1650646062632
+    url: "{{ _.api }}/user-client"
+    name: Create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"user": {
+        		"email": "dudumatosneto@gmail.com",
+        		"password": "123456789"
+        	},
+        	"profile": {
+        		"fullName": "Dudu Neto"
+        	},
+        	"preferencePetTypes": [
+        		"9562d960-dc71-4865-93d9-ca79f277904f"
+        	]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_16eb2213c20f42f4b1b0a4ee87cb8d46
+    authentication:
+      type: bearer
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzNTQ3NjI1LTNlOTAtNGY5OC1iOTAyLTg5MjQwZDJkOTIxMyIsImtleSI6ImVtYWlsIiwia2V5VmFsdWUiOiJkdWR1bWF0b3NuZXRvQGdtYWlsLmNvbSIsImNvZGUiOiI5ODc5MzEiLCJzdGF0dXMiOiJWQUxJREFURUQiLCJjcmVhdGVkQXQiOiIyMDIyLTA1LTAyVDIwOjI4OjQ5LjM0NFoiLCJleHBpcmVBdCI6IjIwMjItMDUtMDJUMjA6MzM6NDguNTg3WiIsImRlbGV0ZWRBdCI6bnVsbCwiaWF0IjoxNjUxNTIzNDE4fQ.cI7_nVZrCTh5Tez9qqSzFq5L4WLnkqnpCiPi0WEzVak
+    metaSortKey: -1650646062632
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_952c4ddc84324eceaa45f29b6b28e331
+    parentId: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    modified: 1650646058557
+    created: 1650646058557
+    name: User Client
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1650646058557
+    _type: request_group
+  - _id: req_deb99b83d2074a00970de1acb2d6588c
+    parentId: fld_952c4ddc84324eceaa45f29b6b28e331
+    modified: 1653068875361
+    created: 1651460373355
+    url: "{{ _.api }}/user-client"
+    name: List All
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1650520568351
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_860b15425248414ba1482230c3210884
+    parentId: fld_952c4ddc84324eceaa45f29b6b28e331
+    modified: 1653068929946
+    created: 1653068820483
+    url: "{{ _.api }}/user-client/pet-types"
+    name: List petTypes
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1653068820483
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_90a93563aa4d4659b5a66cf0eec640af
+    parentId: fld_6b0c8f28ec6c41c8a64f9ba4bb4f4d7d
+    modified: 1651590877388
+    created: 1651245402565
+    url: "{{ _.api }}/products/9c2f46b9-9f8d-4f0e-95f9-b48690268234"
+    name: Create One
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"code": "string",
+        	"title": "string",
+        	"brand": "string",
+        	"status": "ACTIVE",
+        	"weight": 1,
+        	"price": 1.99,
+        	"info": "string",
+        	"details": "string",
+        	"tech_details": "string"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_7050973bf3104061a29877c261ba5694
+    authentication: {}
+    metaSortKey: -1651245402565
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_6b0c8f28ec6c41c8a64f9ba4bb4f4d7d
+    parentId: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    modified: 1651245398133
+    created: 1651245398133
+    name: Product
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1651245398133
+    _type: request_group
+  - _id: req_c4e43ecf6825434495bb95f148b3d551
+    parentId: fld_96649d8f3cf543baada53ee827d748b3
+    modified: 1651861846347
+    created: 1645581404919
+    url: "{{ _.api }}/ec/user-worker"
+    name: Create One
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"user": {
+        		"email": "user02@email.com"
+        	},
+        	"profile": {
+        		"name": "User Worker 02",
+        		"document": "123.123.123-12",
+        		"phone": "99 99999-9999"
+        	},
+        	"occupations": ["72e59f2f-e8de-4779-98db-40e22e85af6f"],
+        	"menus": ["d9a66211-4454-4bd9-9a03-3fc7ed8a88f7"]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_3419d211993a4bca8f9b35aadfd3fe77
+    authentication:
+      type: bearer
+      token: "{{ _.user_worker_ec_token }}"
+      disabled: false
+    metaSortKey: -1645581404920
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_96649d8f3cf543baada53ee827d748b3
+    parentId: fld_111a53c6a4f949f4a2208cf517f82960
+    modified: 1645581392534
+    created: 1645581392534
+    name: EC User Workers
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1645581392534
+    _type: request_group
+  - _id: req_9a60c7f745f849a0bd4c13cdf384a65d
+    parentId: fld_96649d8f3cf543baada53ee827d748b3
+    modified: 1652193214396
+    created: 1645899361332
+    url: "{{ _.api }}/ec/user-worker"
+    name: List All
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.user_worker_ec_token }}"
+      disabled: false
+    metaSortKey: -1645523606273.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_eaa5f821033f4266a0b3d3017e06d470
+    parentId: fld_96649d8f3cf543baada53ee827d748b3
+    modified: 1651590623646
+    created: 1646954843585
+    url: "{{ _.api }}/ec/user-worker/3f037111-3c4f-4ae0-9b65-8595a7134894"
+    name: Update Status
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"status": "ACTIVE",
+        	"profile": { 
+        		"name": "User Worker Apenas",
+        		"phone": "123123123"
+        	},
+        	"menus": ["b3075652-4bb3-4d08-9a61-36a35541edd8"],
+        	"occupations": ["a36d7f3d-52ca-4fbf-b171-89fa62d3fe07"]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_e02472616fe849258e5d0e3296701473
+    authentication:
+      type: bearer
+      token: "{{ _.user_worker_ec_token }}"
+    metaSortKey: -1645248089777.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3cf3b24d31ee4bf18e1496f96c2ab649
+    parentId: fld_e1fa463019174c9598eedaf6603e1ea7
+    modified: 1651072432816
+    created: 1647364531062
+    url: "{{ _.api }}/occupation"
+    name: List All
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1647364531062
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_e1fa463019174c9598eedaf6603e1ea7
+    parentId: fld_111a53c6a4f949f4a2208cf517f82960
+    modified: 1647364527404
+    created: 1647364523553
+    name: Occupations
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1645581392584
+    _type: request_group
+  - _id: req_724a01c2221b46afafa783c43d871c92
+    parentId: fld_d1d1ec7b911a4494aa5a9133a74f08ff
+    modified: 1650336749918
+    created: 1649799714330
+    url: "{{ _.big_data_corp_api_pessoas }}"
+    name: GET INFO
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "Datasets": "basic_data",
+            "q": "name{Laila Maria Abdalla}",
+            "AccessToken": "b9a294d9-094c-49b1-8fdc-f8cfbba0bbf5"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0b0a3a2ec9394a5e90ecfadecf3413f3
+    authentication: {}
+    metaSortKey: -1649799500038
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_d1d1ec7b911a4494aa5a9133a74f08ff
+    parentId: fld_adea76d6bc9d456f85d46ed0696866cc
+    modified: 1649799358724
+    created: 1649799358724
+    name: API Pessoas
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1649799358724
+    _type: request_group
+  - _id: fld_adea76d6bc9d456f85d46ed0696866cc
+    parentId: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    modified: 1651514039958
+    created: 1649799352875
+    name: BigDataCorp
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1651245398183
+    _type: request_group
+  - _id: req_bb55cd44ed43420facc487fdfa900225
+    parentId: fld_d1d1ec7b911a4494aa5a9133a74f08ff
+    modified: 1649983472364
+    created: 1649983051970
+    url: "{{ _.big_data_corp_api_pessoas }}"
+    name: GET LAW ISSUES
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "Datasets": "circles_lawsuit_parties",
+            "q": "doc{12319503315}",
+            "AccessToken": "b9a294d9-094c-49b1-8fdc-f8cfbba0bbf5"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0b0a3a2ec9394a5e90ecfadecf3413f3
+    authentication: {}
+    metaSortKey: -1649743373011
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9d5d74d1ef964435b47ebf413792d908
+    parentId: fld_d1d1ec7b911a4494aa5a9133a74f08ff
+    modified: 1650251055535
+    created: 1650251032140
+    url: "{{ _.big_data_corp_api_pessoas }}"
+    name: CIRCULO - PARENTES
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "Datasets": "circles_relatives",
+            "q": "doc{05373985384}",
+            "AccessToken": "b9a294d9-094c-49b1-8fdc-f8cfbba0bbf5"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0b0a3a2ec9394a5e90ecfadecf3413f3
+    authentication: {}
+    metaSortKey: -1649771436524.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_12a8f068ec67402181ff66e01e8d8965
+    parentId: fld_d1d1ec7b911a4494aa5a9133a74f08ff
+    modified: 1650251242335
+    created: 1650251228592
+    url: "{{ _.big_data_corp_api_pessoas }}"
+    name: PROBABILIDADE NEGATIVACAO
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "Datasets": "indebtedness_question",
+            "q": "doc{04714031309}",
+            "AccessToken": "b9a294d9-094c-49b1-8fdc-f8cfbba0bbf5"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0b0a3a2ec9394a5e90ecfadecf3413f3
+    authentication: {}
+    metaSortKey: -1649785468281.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_67395578d9f3469aa2ca256a4aee6e7d
+    parentId: fld_d1d1ec7b911a4494aa5a9133a74f08ff
+    modified: 1651463831713
+    created: 1650255155426
+    url: "{{ _.big_data_corp_api_pessoas }}"
+    name: GRUPO EMPRESARIAL - SOCIEDADE
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "Datasets": "company_group_ownership",
+            "q": "doc{04714031309}",
+            "AccessToken": "b9a294d9-094c-49b1-8fdc-f8cfbba0bbf5"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0b0a3a2ec9394a5e90ecfadecf3413f3
+    authentication: {}
+    metaSortKey: -1649792484159.625
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_dd249e6d975a4a218040dbda25fcae63
+    parentId: fld_65481dba080d4321b9af085f4ffa0f9f
+    modified: 1650333595913
+    created: 1649799500038
+    url: "{{ _.big_data_corp_api_empresas }}"
+    name: GET INFO
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "Datasets": "basic_data",
+            "q": "doc{32801028000114}",
+            "AccessToken": "b9a294d9-094c-49b1-8fdc-f8cfbba0bbf5"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_0b0a3a2ec9394a5e90ecfadecf3413f3
+    authentication: {}
+    metaSortKey: -1649799500088
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_65481dba080d4321b9af085f4ffa0f9f
+    parentId: fld_adea76d6bc9d456f85d46ed0696866cc
+    modified: 1649799714328
+    created: 1649799714328
+    name: API Empresas
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1649799355799.5
+    _type: request_group
+  - _id: req_1f9e6ab30bab4ee7aeaaa3a55f35bfee
+    parentId: wrk_f202cfe851444ad8afd911811a8223bd
+    modified: 1653176644718
+    created: 1652727926551
+    url: "{{ _.api_nest }}/api/v1/jogadores"
+    name: criarAtualizarJogador
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+            "telefoneCelular": "+5562982245019",
+            "email": "molinalucas765@gmail.com",
+            "nome": "LucasMOlina12"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_87681104a82045abbe37f51c47858707
+    authentication: {}
+    metaSortKey: -1652727926551
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_f202cfe851444ad8afd911811a8223bd
+    parentId: null
+    modified: 1652727492414
+    created: 1652727492414
+    name: NestJS,RabbitMQ & Cloud Services
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_3ac33f0a58bf4419b70533a110554407
+    parentId: wrk_f202cfe851444ad8afd911811a8223bd
+    modified: 1652807139693
+    created: 1652807115441
+    url: "{{ _.api_nest }}/api/v1/jogadores"
+    name: consultarTodosJogadores
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1652807115441
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d3b1a629db3f4f8696117ef9b12ad788
+    parentId: wrk_f202cfe851444ad8afd911811a8223bd
+    modified: 1653176619434
+    created: 1652973199743
+    url: "{{ _.api_nest }}/api/v1/jogadores"
+    name: consultarJogadorPeloEmail
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_2d98f4aea4a546af927e13df65b09310
+        name: email
+        value: molinalucas765@gmail.com
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1652767520996
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_45e730f916ca4028afb13929d6d08ef0
+    parentId: wrk_f202cfe851444ad8afd911811a8223bd
+    modified: 1653176630451
+    created: 1653161576201
+    url: "{{ _.api_nest }}/api/v1/jogadores"
+    name: deletarJogador
+    description: ""
+    method: DELETE
+    body: {}
+    parameters:
+      - id: pair_f61964dbbb8a41e183b81808e52c5503
+        name: email
+        value: molinalucas765@gmail.com
+        description: ""
+    headers: []
+    authentication: {}
+    metaSortKey: -1653161576201
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_2c39fea3389ecceddb63e3d86ef5af0053229f09
+    parentId: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    modified: 1650132677873
+    created: 1642714159495
+    name: Base Environment
+    data:
+      local_api: http://localhost:3333
+      big_data_corp_api_pessoas: https://bigboost.bigdatacorp.com.br/peoplev2
+      big_data_corp_api_empresas: https://bigboost.bigdatacorp.com.br/companies
+    dataPropertyOrder:
+      "&":
+        - local_api
+        - big_data_corp_api_pessoas
+        - big_data_corp_api_empresas
+    color: null
+    isPrivate: false
+    metaSortKey: 1642714159495
+    _type: environment
+  - _id: jar_2c39fea3389ecceddb63e3d86ef5af0053229f09
+    parentId: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    modified: 1642714159499
+    created: 1642714159499
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_20d53e79ed5348c4bb2299fe4819262c
+    parentId: wrk_f50b75375ea2468d8e8c4dfae542a8e4
+    modified: 1642714159485
+    created: 1642714159485
+    fileName: Ziggie
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_9f97e10bcdfa4a97a3812d180efa1923
+    parentId: env_2c39fea3389ecceddb63e3d86ef5af0053229f09
+    modified: 1651590948600
+    created: 1644254316167
+    name: HML
+    data:
+      api: https://hml-ziggie-service.azurewebsites.net
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmUzODdlLTcxOTMtNGQzNy04NjA5LTI3OWU0YTcyZDUzYSIsImVtYWlsIjoiZ3VsaXpyYWl6ZXJAZ21haWwuY29tIiwiaWF0IjoxNjUxNTEwMzcyfQ.1_N2VXtgWddOKcC1FesmjYOrVJ0_nXJK5fMZapCCzhA
+      user_worker_ec_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI1NmUzODdlLTcxOTMtNGQzNy04NjA5LTI3OWU0YTcyZDUzYSIsImVjSWQiOiI5YzJmNDZiOS05ZjhkLTRmMGUtOTVmOS1iNDg2OTAyNjgyMzQiLCJ1c2VyV29ya2VyRWNJZCI6ImFhNjc3Yzk4LTIzMjEtNGIyNS05YTBjLTUwYzUyNDE5MDIyYiIsImlhdCI6MTY1MTUxMDQwOH0.1sE7LLmaLocWMz0mamlZoU-sEdBnpCjtCRQr6-n0nUQ
+      admin_email: gulizraizer@gmail.com
+      admin_password: "123456789"
+    dataPropertyOrder:
+      "&":
+        - api
+        - token
+        - user_worker_ec_token
+        - admin_email
+        - admin_password
+    color: "#ff892e"
+    isPrivate: false
+    metaSortKey: 1644254316167
+    _type: environment
+  - _id: env_fbdb3008b16a45b8b2c082c3f407b67a
+    parentId: env_2c39fea3389ecceddb63e3d86ef5af0053229f09
+    modified: 1651853280467
+    created: 1644267377182
+    name: Local
+    data:
+      api: http://localhost:3333
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNDU4ODI3LTJiMTAtNGI4Yi05YTY3LTQ1OTA2MTU2MjRjMyIsImVtYWlsIjoiZ3VsaXpyYWl6ZXJAZ21haWwuY29tIiwiaWF0IjoxNjUxODUzMjMyfQ.Ryl3j5Wj1WlzeezxiwiSPSQOiP1vmNknrVfyOUnlnJ8
+      user_worker_ec_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNDU4ODI3LTJiMTAtNGI4Yi05YTY3LTQ1OTA2MTU2MjRjMyIsImVjSWQiOiIzN2M2ZTkxYS0xYTgwLTQyZjItOTY0OC0wYmVlZDUwOWQ2YjQiLCJ1c2VyV29ya2VyRWNJZCI6Ijg3YmNjYTY4LWE3MzYtNGY2Ni1hOGQ3LTI5ZWRlZmQ4NDUwOCIsImlhdCI6MTY1MTg1MzI3MX0.xgFtXn4oUzulcUztIEAvvjuXDfwdDtSGMFvOb_Rx3og
+      admin_email: gulizraizer@gmail.com
+      admin_password: "123456789"
+    dataPropertyOrder:
+      "&":
+        - api
+        - token
+        - user_worker_ec_token
+        - admin_email
+        - admin_password
+    color: "#29ffdb"
+    isPrivate: false
+    metaSortKey: 1644267377182
+    _type: environment
+  - _id: env_3042be32053c4430ad7f9612c9dd8b20
+    parentId: env_2c39fea3389ecceddb63e3d86ef5af0053229f09
+    modified: 1652418666307
+    created: 1652412067686
+    name: Local (Copy)
+    data:
+      api: http://localhost:3333
+      token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNDU4ODI3LTJiMTAtNGI4Yi05YTY3LTQ1OTA2MTU2MjRjMyIsImVtYWlsIjoiZ3VsaXpyYWl6ZXJAZ21haWwuY29tIiwiaWF0IjoxNjUxODUzMjMyfQ.Ryl3j5Wj1WlzeezxiwiSPSQOiP1vmNknrVfyOUnlnJ8
+      user_worker_ec_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyNDU4ODI3LTJiMTAtNGI4Yi05YTY3LTQ1OTA2MTU2MjRjMyIsImVjSWQiOiIzN2M2ZTkxYS0xYTgwLTQyZjItOTY0OC0wYmVlZDUwOWQ2YjQiLCJ1c2VyV29ya2VyRWNJZCI6Ijg3YmNjYTY4LWE3MzYtNGY2Ni1hOGQ3LTI5ZWRlZmQ4NDUwOCIsImlhdCI6MTY1MTg1MzI3MX0.xgFtXn4oUzulcUztIEAvvjuXDfwdDtSGMFvOb_Rx3og
+      admin_email: gulizraizer@gmail.com
+      admin_password: "123456789"
+      lucas_email: molinalucas765@gmail.com
+      lucas_password: "123456789"
+      lucas_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM1YmU4ZmMzLWM2ZWUtNDUzNS1iNjFlLTY4NTljYTIzYTdmNyIsImVtYWlsIjoiZ3VsaXpyYWl6ZXJAZ21haWwuY29tIiwiaWF0IjoxNjUyNDE4NjU0LCJleHAiOjE2NTI0MTg5NTR9.F0WOlNffStxvTsYlqb5Z34H78BuyIKsCZ4v6Lizbywg
+    dataPropertyOrder:
+      "&":
+        - api
+        - token
+        - user_worker_ec_token
+        - admin_email
+        - admin_password
+        - lucas_email
+        - lucas_password
+        - lucas_token
+    color: "#ea1f1f"
+    isPrivate: false
+    metaSortKey: 1644267377232
+    _type: environment
+  - _id: env_6e1721dfe94f972fcfce24fe696afd13eee4cc7a
+    parentId: wrk_f202cfe851444ad8afd911811a8223bd
+    modified: 1652728082894
+    created: 1652727492418
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: {}
+    color: null
+    isPrivate: false
+    metaSortKey: 1652727492418
+    _type: environment
+  - _id: jar_6e1721dfe94f972fcfce24fe696afd13eee4cc7a
+    parentId: wrk_f202cfe851444ad8afd911811a8223bd
+    modified: 1652727492419
+    created: 1652727492419
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_5e2c846f76c44cc38154eb39f379664f
+    parentId: wrk_f202cfe851444ad8afd911811a8223bd
+    modified: 1652727492415
+    created: 1652727492415
+    fileName: NestJS,RabbitMQ & Cloud Services
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_5860a8b7608f46ef81775ffab60e8faf
+    parentId: env_6e1721dfe94f972fcfce24fe696afd13eee4cc7a
+    modified: 1652728136760
+    created: 1652728088201
+    name: NestJS
+    data:
+      api_nest: http://localhost:8080
+    dataPropertyOrder:
+      "&":
+        - api_nest
+    color: "#e70808"
+    isPrivate: false
+    metaSortKey: 1652728088201
+    _type: environment
